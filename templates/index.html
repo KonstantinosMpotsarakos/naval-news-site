@@ -104,17 +104,15 @@
 
 </body>
      <script>
-function todayStr() {
-  const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-  const d = new Date();
-  const day = String(d.getDate()).padStart(2, "0");
-  return `${day} ${months[d.getMonth()]} ${d.getFullYear()}`;
+function mostRecentDate() {
+  const dates = [...document.querySelectorAll(".entry")].map(e => e.dataset.date).filter(Boolean);
+  return dates[0] || null;
 }
 function showTab(tab) {
   document.querySelectorAll(".tab-btn").forEach(b => b.classList.toggle("active", b.dataset.tab === tab));
-  const today = todayStr();
+  const latest = mostRecentDate();
   document.querySelectorAll(".entry").forEach(e => {
-    e.style.display = (tab === "logs" || e.dataset.date === today) ? "" : "none";
+    e.style.display = (tab === "logs" || e.dataset.date === latest) ? "" : "none";
   });
 }
 document.addEventListener("DOMContentLoaded", () => showTab("daily"));
