@@ -23,26 +23,27 @@
 </head>
 <body>
 
-<div class="hero-banner">
-  <img src="static/header-banner.png" alt="Anchor and rope" class="hero-banner-img">
-</div>
 <header class="titleblock">
-  <div class="titleblock-inner">
-    <div class="titleblock-text">
-      <h1>Deck Log</h1>
-      <p class="tagline">Naval architecture &amp; marine engineering, charted daily</p>
+  <img src="static/header-banner.png" alt="Anchor and rope" class="titleblock-bg">
+  <div class="titleblock-overlay"></div>
+  <div class="titleblock-content">
+    <div class="titleblock-inner">
+      <div class="titleblock-text">
+        <h1>Deck Log</h1>
+        <p class="tagline">Naval architecture &amp; marine engineering, charted daily</p>
+      </div>
+      <div class="titleblock-meta">
+        <span>BY ΚΩΝΣΤΑΝΤΙΝΟΣ ΜΠΟΤΣΑΡΑΚΟΣ</span>
+        <span>SOURCES: GR / INTL</span>
+        <span>UPDATED 13 Jul 2026, 04:16 UTC</span>
+        <span>120 ENTRIES LOGGED</span>
+      </div>
     </div>
-    <div class="titleblock-meta">
-      <span>BY ΚΩΝΣΤΑΝΤΙΝΟΣ ΜΠΟΤΣΑΡΑΚΟΣ</span>
-      <span>SOURCES: GR / INTL</span>
-      <span>UPDATED 13 Jul 2026, 04:09 UTC</span>
-      <span>120 ENTRIES LOGGED</span>
-    </div>
+    <nav class="tabs">
+      <button class="tab-btn active" data-tab="daily" onclick="showTab('daily')">DAILY</button>
+      <button class="tab-btn" data-tab="logs" onclick="showTab('logs')">LOGS</button>
+    </nav>
   </div>
-  <nav class="tabs">
-    <button class="tab-btn active" data-tab="daily" onclick="showTab('daily')">DAILY</button>
-    <button class="tab-btn" data-tab="logs" onclick="showTab('logs')">LOGS</button>
-  </nav>
 </header>
 
 <main class="log">
@@ -1394,7 +1395,7 @@
 </main>
 
 <footer class="revision-note">
-  <p>Compiled automatically from RSS feeds &amp; summarized with Claude. Last revision 13 Jul 2026, 04:09 UTC.</p>
+  <p>Compiled automatically from RSS feeds &amp; summarized with Claude. Last revision 13 Jul 2026, 04:16 UTC.</p>
 </footer>
 
 </body>
