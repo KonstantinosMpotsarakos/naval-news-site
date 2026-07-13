@@ -235,3 +235,25 @@ a { color: inherit; }
   border-color: #7FB3E0;
   color: #0C447C;
 }
+.hero-banner {
+  width: 100%;
+  overflow: hidden;
+  background: var(--navy);
+}
+.hero-banner-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* on narrow phones, the banner would otherwise shrink to a thin sliver
+   and the anchor would become too small to read — so below 700px we
+   fix a height and crop to the left side (anchor + left knot) instead
+   of scaling the whole thing down */
+@media (max-width: 700px) {
+  .hero-banner-img {
+    height: 190px;
+    object-fit: cover;
+    object-position: left center;
+  }
+}
