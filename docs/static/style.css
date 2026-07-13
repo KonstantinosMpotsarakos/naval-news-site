@@ -25,14 +25,16 @@ body {
 
 a { color: inherit; }
 
-/* Title block, styled like a chart cartouche */
+/* ============ HEADER: image banner with text overlaid ============ */
+
 .titleblock {
   position: relative;
   overflow: hidden;
   width: 100%;
-  aspect-ratio: 1935 / 544;   /* matches the banner image exactly, so the container is never taller or shorter than the photo */
+  aspect-ratio: 1935 / 544;
   color: var(--parchment);
 }
+
 .titleblock-bg {
   position: absolute;
   inset: 0;
@@ -40,42 +42,108 @@ a { color: inherit; }
   height: 100%;
   object-fit: cover;
 }
+
 .titleblock-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom, rgba(16,35,58,0) 0%, rgba(16,35,58,0.25) 70%, rgba(16,35,58,0.55) 100%);
 }
+
+/* name / sources / updated block - stacked, top right, clear of the top rope */
+.titleblock-meta {
+  position: absolute;
+  top: 8%;
+  right: 7%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: clamp(7px, 0.75vw, 11px);
+  letter-spacing: 0.03em;
+  color: #9FB0BE;
+  text-transform: uppercase;
+}
+
+/* title + tagline + tabs - bottom left, clear of the anchor and bottom rope */
 .titleblock-content {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 17%;      /* sits just above the bottom rope, inside the frame */
+  bottom: 21%;
   z-index: 2;
 }
+
 .titleblock-inner {
-  padding: 0 7% 0 30%;   /* left padding cleared past the anchor */
+  padding: 0 7% 0 30%;
   display: flex;
   align-items: flex-end;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-.tabs {
-  padding: 0 7% 0 30%;
-  margin-top: 12px;
-  max-width: none;
-}
 .titleblock-text h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
   font-size: clamp(18px, 3.2vw, 40px);
-}
-.tagline {
-  font-size: clamp(8px, 1vw, 13px);
-}
-.titleblock-meta {
-  font-size: clamp(7px, 0.75vw, 11px);
+  margin: 0;
+  letter-spacing: 0.02em;
+  color: var(--parchment);
 }
 
-/* Two-column log layout */
+.tagline {
+  margin: 4px 0 0;
+  font-family: var(--font-mono);
+  font-size: clamp(8px, 1vw, 13px);
+  letter-spacing: 0.04em;
+  color: #C7CDD6;
+  text-transform: uppercase;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  padding: 0 7% 0 30%;
+  margin-top: 12px;
+}
+
+.tab-btn {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid #4A6B85;
+  color: #9FB0BE;
+  padding: 10px 28px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.tab-btn:hover {
+  border-color: #9FB0BE;
+}
+
+.tab-btn.active {
+  background: #BFDDF5;
+  border-color: #7FB3E0;
+  color: #0C447C;
+}
+
+@media (max-width: 700px) {
+  .titleblock-inner, .tabs {
+    padding-left: 12%;
+  }
+  .titleblock-meta {
+    top: 5%;
+    right: 5%;
+  }
+}
+
+/* ============ MAIN LOG: two-column layout ============ */
+
 .log {
   max-width: 1100px;
   margin: 0 auto;
@@ -188,27 +256,4 @@ a { color: inherit; }
 @media (max-width: 760px) {
   .log { grid-template-columns: 1fr; }
   .bearing-line { display: none; }
-  .titleblock-meta { align-items: flex-start; margin-left: 0; }
-}
-
-.tab-btn {
-  font-family: var(--font-display);
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  background: transparent;
-  border: 1px solid #4A6B85;
-  color: #9FB0BE;
-  padding: 10px 28px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-.tab-btn:hover {
-  border-color: #9FB0BE;
-}
-.tab-btn.active {
-  background: #BFDDF5;
-  border-color: #7FB3E0;
-  color: #0C447C;
 }

@@ -26,17 +26,19 @@
 <header class="titleblock">
   <img src="static/header-banner.png" alt="Anchor and rope" class="titleblock-bg">
   <div class="titleblock-overlay"></div>
+
+  <div class="titleblock-meta">
+    <span>BY ΚΩΝΣΤΑΝΤΙΝΟΣ ΜΠΟΤΣΑΡΑΚΟΣ</span>
+    <span>SOURCES: GR / INTL</span>
+    <span>UPDATED 13 Jul 2026, 04:37 UTC</span>
+    <span>120 ENTRIES LOGGED</span>
+  </div>
+
   <div class="titleblock-content">
     <div class="titleblock-inner">
       <div class="titleblock-text">
         <h1>Deck Log</h1>
         <p class="tagline">Naval architecture &amp; marine engineering, charted daily</p>
-      </div>
-      <div class="titleblock-meta">
-        <span>BY ΚΩΝΣΤΑΝΤΙΝΟΣ ΜΠΟΤΣΑΡΑΚΟΣ</span>
-        <span>SOURCES: GR / INTL</span>
-        <span>UPDATED 13 Jul 2026, 04:28 UTC</span>
-        <span>120 ENTRIES LOGGED</span>
       </div>
     </div>
     <nav class="tabs">
@@ -1395,11 +1397,10 @@
 </main>
 
 <footer class="revision-note">
-  <p>Compiled automatically from RSS feeds &amp; summarized with Claude. Last revision 13 Jul 2026, 04:28 UTC.</p>
+  <p>Compiled automatically from RSS feeds &amp; summarized with Claude. Last revision 13 Jul 2026, 04:37 UTC.</p>
 </footer>
 
-</body>
-     <script>
+<script>
 function mostRecentDate() {
   const dates = [...document.querySelectorAll(".entry")].map(e => e.dataset.date).filter(Boolean);
   return dates[0] || null;
@@ -1413,4 +1414,5 @@ function showTab(tab) {
 }
 document.addEventListener("DOMContentLoaded", () => showTab("daily"));
 </script>
+</body>
 </html>
