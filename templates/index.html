@@ -53,10 +53,10 @@
 <main class="log">
 
   <section class="column" aria-label="Greek sources">
-    <div class="column-header">
-      <h2>Ελληνικές πηγές</h2>
-      <span class="column-sub">Greek sources</span>
-    </div>
+    <div class="column-header" data-key="greek" onclick="toggleColumn('greek')">
+  <h2>Ελληνικές πηγές</h2>
+  <span class="column-sub">Greek sources</span>
+</div>
 
     {% if greek_articles %}
       {% for a in greek_articles %}
@@ -79,11 +79,10 @@
   <div class="bearing-line" aria-hidden="true"></div>
 
   <section class="column" aria-label="International sources">
-    <div class="column-header">
-      <h2>International sources</h2>
-      <span class="column-sub">Διεθνείς πηγές</span>
-    </div>
-
+    <div class="column-header" data-key="intl" onclick="toggleColumn('intl')">
+  <h2>International sources</h2>
+  <span class="column-sub">Διεθνείς πηγές</span>
+</div>
     {% if intl_articles %}
       {% for a in intl_articles %}
      <article class="entry hue-{{ loop.index0 % 6 }}" data-date="{{ a.date }}">
