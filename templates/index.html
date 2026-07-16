@@ -60,7 +60,7 @@
 
     {% if greek_articles %}
       {% for a in greek_articles %}
-      <article class="entry" data-date="{{ a.date }}">
+      <article class="entry hue-{{ loop.index0 % 6 }}" data-date="{{ a.date }}">
         <div class="entry-meta">
           <span class="entry-no">LOG {{ a.entry_no }}</span>
           <span class="entry-date">{{ a.date }}</span>
@@ -86,7 +86,7 @@
 
     {% if intl_articles %}
       {% for a in intl_articles %}
-      <article class="entry" data-date="{{ a.date }}">
+     <article class="entry hue-{{ loop.index0 % 6 }}" data-date="{{ a.date }}">
         <div class="entry-meta">
           <span class="entry-no">LOG {{ a.entry_no }}</span>
           <span class="entry-date">{{ a.date }}</span>
