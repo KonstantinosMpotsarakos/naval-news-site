@@ -284,3 +284,18 @@ a { color: inherit; }
   .log { grid-template-columns: 1fr; }
   .bearing-line { display: none; }
 }
+.column-header {
+  cursor: pointer;
+}
+.column-header:hover h2 {
+  color: var(--brass);
+}
+.column-header.active-filter h2 {
+  color: var(--brass);
+}
+.column-header.active-filter {
+  border-bottom-color: var(--brass);
+}
+.log.solo {
+  grid-template-columns: 1fr;
+}
