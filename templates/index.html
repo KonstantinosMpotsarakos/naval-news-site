@@ -108,6 +108,19 @@
 </footer>
 
 <script>
+     function toggleColumn(which) {
+  const log = document.querySelector('.log');
+  const current = log.dataset.filter || 'both';
+  const next = current === which ? 'both' : which;
+  log.dataset.filter = next;
+  document.querySelectorAll('.column').forEach(col => {
+    const key = col.getAttribute('aria-label') === 'Greek sources' ? 'greek' : 'intl';
+    col.style.display = (next === 'both' || next === key) ? '' : 'none';
+  });
+  document.querySelector('.bearing-line').style.display = next === 'both' ? '' : 'none';
+  log.classList.toggle('solo', next !== 'both');
+  document.querySelectorAll('.column-header').forEach(h => h.classList.toggle('active-filter', h.dataset.key === next));
+}
 function mostRecentDate() {
   const dates = [...document.querySelectorAll(".entry")].map(e => e.dataset.date).filter(Boolean);
   return dates[0] || null;
