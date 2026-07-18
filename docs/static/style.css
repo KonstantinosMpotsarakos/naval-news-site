@@ -90,12 +90,13 @@ a { color: inherit; }
 
 .titleblock-text h1 {
   font-family: 'Work Sans', sans-serif;
-  font-weight: 444;
+  font-weight: 500;
   font-size: clamp(22px, 4.2vw, 44px);
-  margin: 0.3;
+  margin: 0;
   letter-spacing: 0.01em;
   color: var(--parchment);
 }
+
 .tagline {
   margin: 4px 0 0;
   font-family: var(--font-mono);
@@ -129,7 +130,7 @@ a { color: inherit; }
   color: #0C2A32;
 }
 
-/* ---- mobile: swap to the dedicated mobile banner image and its own layout ---- */
+/* ---- mobile: dedicated banner image + its own layout (everything below stays INSIDE this one block) ---- */
 @media (max-width: 700px) {
   .titleblock {
     aspect-ratio: 802 / 401;
@@ -149,7 +150,6 @@ a { color: inherit; }
   .titleblock-text h1 {
     font-size: 24px;
   }
-}
   .tagline {
     font-size: 10px;
     line-height: 1.3;
@@ -188,6 +188,19 @@ a { color: inherit; }
   justify-content: space-between;
   gap: 10px;
   flex-wrap: wrap;
+  cursor: pointer;
+}
+
+.column-header:hover h2 {
+  color: var(--brass);
+}
+
+.column-header.active-filter h2 {
+  color: var(--brass);
+}
+
+.column-header.active-filter {
+  border-bottom-color: var(--brass);
 }
 
 .column-header h2 {
@@ -205,19 +218,22 @@ a { color: inherit; }
   letter-spacing: 0.04em;
 }
 
+.log.solo {
+  grid-template-columns: 1fr;
+}
+
 .entry {
   padding: 18px 16px;
   margin-bottom: 6px;
   border-radius: 8px;
 }
+
 .hue-0 { background: rgba(62,110,104,0.10); }
 .hue-1 { background: rgba(169,117,46,0.10); }
 .hue-2 { background: rgba(62,90,114,0.10); }
 .hue-3 { background: rgba(150,90,90,0.10); }
 .hue-4 { background: rgba(70,130,110,0.10); }
 .hue-5 { background: rgba(90,100,120,0.10); }
-
-.entry:last-child { border-bottom: none; }
 
 .entry-meta {
   display: flex;
@@ -281,30 +297,12 @@ a { color: inherit; }
   letter-spacing: 0.03em;
 }
 
-@media (max-width: 760px) {
-  .log { grid-template-columns: 1fr; }
-  .bearing-line { display: none; }
-}
-.column-header {
-  cursor: pointer;
-}
-.column-header:hover h2 {
-  color: var(--brass);
-}
-.column-header.active-filter h2 {
-  color: var(--brass);
-}
-.column-header.active-filter {
-  border-bottom-color: var(--brass);
-}
-.log.solo {
-  grid-template-columns: 1fr;
-}
 .search-bar {
   max-width: 1100px;
   margin: 24px auto 0;
   padding: 0 24px;
 }
+
 .search-bar input {
   display: block;
   width: 100%;
@@ -318,6 +316,16 @@ a { color: inherit; }
   border-radius: 6px;
   background: #fff;
   color: var(--ink);
+}
+
+.search-bar input:focus {
+  outline: 2px solid var(--brass);
+  outline-offset: 1px;
+}
+
+@media (max-width: 760px) {
+  .log { grid-template-columns: 1fr; }
+  .bearing-line { display: none; }
 }
 .search-bar input:focus {
   outline: 2px solid var(--brass);
