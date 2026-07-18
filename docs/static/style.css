@@ -143,11 +143,13 @@ a { color: inherit; }
     bottom: 13%;
   }
   .titleblock-inner, .tabs {
-    padding-left: 26%;
+    padding-left: 6%;
+    padding-right: 40%;
   }
   .titleblock-text h1 {
-    font-size: 26px;
+    font-size: 24px;
   }
+}
   .tagline {
     font-size: 10px;
     line-height: 1.3;
